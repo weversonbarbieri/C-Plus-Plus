@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1705013006 source:c:\c language projects\c language projects\c++\sequencial structures\circle_area\main.cpp
+	<bits/stdc++.h>
+	<iomanip>
+	<math.h>
+
