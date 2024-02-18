@@ -1,27 +1,33 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 int main()
 {
-    int seconds, secondsI, totalseconds, hour, totalminutes;
-    double secondsD, minutesD, percseconds, percminutes;
+    int starttime, endtime, totalhours;
 
-    cout << "Enter the dutation in seconds: ";
-    cin >> seconds;
-    secondsI = seconds / 60;
-    secondsD = seconds / 60.0;
-    percseconds = secondsD - secondsI;
-    totalseconds = percseconds * 60;
+    cout << "Enter the start time: ";
+    cin >> starttime;
+    cout << "Enter the end time: ";
+    cin >> endtime;
 
-    hour = secondsI / 60;
-    minutesD = secondsI / 60.0;
-    percminutes = minutesD - hour;
-    totalminutes = percminutes * 60;
+    if (starttime > 12 && endtime < 12) {
+        totalhours = (24 - starttime) + endtime;
+        cout << "THE GAME LASTED " << totalhours << " HOURS" << endl;
+    } else if (starttime < 12 && endtime > 12) {
+        totalhours = (12 - starttime) + (endtime - 12);
+        cout << "THE GAME LASTED " << totalhours << " HOURS" << endl;
+    } else if (starttime < 12 && endtime < 12) {
+        totalhours = (12 - starttime) + (12 + endtime);
+        cout << "THE GAME LASTED " << totalhours << " HOURS" << endl;
+    } else if (starttime > 12 && endtime > 12) {
+        totalhours = (24 - starttime) +(endtime - 12) + 12;
+        cout << "THE GAME LASTED " << totalhours << " HOURS" << endl;
+    } else {
+        totalhours = (12 - starttime) + (12 - endtime);
+        cout << "THE GAME LASTED " << totalhours << " HOURS" << endl;
+    }
 
-    cout << fixed << setprecision(2);
-    cout << hour << ":" << totalminutes << ":" << totalseconds << endl;
-    //cout << totalminutes << endl;
 
 
     return 0;
