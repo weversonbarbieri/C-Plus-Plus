@@ -1,12 +1,11 @@
-#include <iostream>
-#include <iomanip>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
     int quantity;
-    double price, money, change, totalpruchased;
+    double price, change, money, total, missing;
 
     cout << "Product price: ";
     cin >> price;
@@ -15,11 +14,19 @@ int main()
     cout << "Money received: ";
     cin >> money;
 
-    totalpruchased = quantity * price;
-    change = money - totalpruchased;
+    total = quantity * price;
 
-    cout << fixed << setprecision (2);
-    cout << "Change = " << change << endl;
+    cout << fixed << setprecision(2);
+    if (money < total) {
+       missing = total - money;
+       cout << "Not enough money. Missing " << missing << " reais" << endl;
+    } else {
+       change = money - total;
+       cout << "Change = " << change << endl;
+    }
+
+
+
 
 
 
