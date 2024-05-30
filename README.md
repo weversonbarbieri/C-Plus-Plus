@@ -1,2 +1,2 @@
-# C plus plus
- Algorithms created fromthe course " Algoritmos e Lógica de Programação - O Curso COMPLETO"
+# C++
+ Algorithms created from the course " Algoritmos e Lógica de Programação - O Curso COMPLETO"
